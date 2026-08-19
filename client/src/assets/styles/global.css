@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 15px;
+}
+
+nav {
+  padding: 20px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+main {
+  padding: 30px;
+  min-height: 400px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
