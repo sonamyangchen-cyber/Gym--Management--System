@@ -1,0 +1,26 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 40px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .main-content {
+    padding: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main-content {
+    padding: 20px 15px;
+  }
+}
