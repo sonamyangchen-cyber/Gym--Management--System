@@ -1,5 +1,10 @@
-import { Link } from "react-router-dom"
+
+import { Link } from "react-router-dom";
 import "./Home.css";
+
+import Button from "../../components/ui/Button";
+import Card from "../../components/ui/Card";
+import PageTitle from "../../components/ui/PageTitle";
 
 function Home() {
   return (
@@ -9,11 +14,7 @@ function Home() {
         <div className="hero-content">
           <span className="hero-badge">FITNESS • HEALTH • COMMUNITY</span>
 
-          <h1>
-            Build Your
-            <span> Stronger </span>
-            Self
-          </h1>
+          <PageTitle title="Build Your Stronger Self" />
 
           <p>
             Manage your workouts, memberships, trainers, and fitness journey
@@ -21,8 +22,8 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Get Started</button>
-            <button className="secondary-btn">Explore Programs</button>
+           <Button text="Get Started" />
+            <Button text="Explore Programs" />
           </div>
 
           <div className="hero-stats">
@@ -63,40 +64,27 @@ function Home() {
             A simple and modern system designed to make gym management easier.
           </p>
         </div>
+<div className="feature-grid">
+  <Card
+    title="🏋️ Workout Programs"
+    description="Follow structured workout plans and keep track of your progress."
+  />
 
-        <div className="feature-grid">
-          <div className="feature-card">
-            <div className="feature-icon">🏋️</div>
-            <h3>Workout Programs</h3>
-            <p>
-              Follow structured workout plans and keep track of your progress.
-            </p>
-          </div>
+  <Card
+    title="👤 Member Management"
+    description="Easily manage member profiles, memberships, and attendance."
+  />
 
-          <div className="feature-card">
-            <div className="feature-icon">👤</div>
-            <h3>Member Management</h3>
-            <p>
-              Easily manage member profiles, memberships, and attendance.
-            </p>
-          </div>
+  <Card
+    title="🧑‍🏫 Personal Trainers"
+    description="Connect members with trainers and manage training sessions."
+  />
 
-          <div className="feature-card">
-            <div className="feature-icon">🧑‍🏫</div>
-            <h3>Personal Trainers</h3>
-            <p>
-              Connect members with trainers and manage training sessions.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <div className="feature-icon">📊</div>
-            <h3>Track Progress</h3>
-            <p>
-              Monitor fitness progress with clear and useful statistics.
-            </p>
-          </div>
-        </div>
+  <Card
+    title="📊 Track Progress"
+    description="Monitor fitness progress with clear and useful statistics."
+  />
+</div>
       </section>
 
       {/* CTA */}

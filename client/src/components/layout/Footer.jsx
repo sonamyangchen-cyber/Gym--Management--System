@@ -1,7 +1,11 @@
+import "./Footer.css";
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer>
-      <p>© 2026 Gym Management System</p>
+    <footer className="footer">
+      <p>Gym Management System</p>
+      <p>© {currentYear} All Rights Reserved.</p>
     </footer>
   );
 }
