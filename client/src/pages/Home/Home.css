@@ -320,3 +320,49 @@
     padding: 30px;
   }
 }
+/* Extra responsive improvements */
+
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: auto;
+    gap: 35px;
+  }
+
+  .hero-content h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 20px 30px;
+  }
+
+  .image-card {
+    height: 380px;
+    transform: none;
+  }
+
+  .image-placeholder {
+    padding: 25px;
+  }
+
+  .image-placeholder strong {
+    font-size: 30px;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .cta-section {
+    gap: 20px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+}

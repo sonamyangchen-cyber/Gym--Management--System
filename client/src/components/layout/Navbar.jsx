@@ -3,51 +3,29 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <header className="navbar">
-      <div className="navbar-container">
+    <nav className="navbar">
+      <div className="navbar-logo">
+        🏋️ Gym Management
+      </div>
 
-        <NavLink to="/" className="brand">
-          🏋️ GymPro
+      <div className="navbar-links">
+        <NavLink to="/" end>
+          Home
         </NavLink>
 
-        <nav className="nav-links">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "nav-link active" : "nav-link"
-            }
-          >
-            Home
-          </NavLink>
+        <NavLink to="/dashboard">
+          Dashboard
+        </NavLink>
 
-          <NavLink
-            to="/dashboard"
-            className={({ isActive }) =>
-              isActive ? "nav-link active" : "nav-link"
-            }
-          >
-            Dashboard
-          </NavLink>
+        <NavLink to="/profile">
+          Profile
+        </NavLink>
 
-          <NavLink
-            to="/profile"
-            className={({ isActive }) =>
-              isActive ? "nav-link active" : "nav-link"
-            }
-          >
-            Profile
-          </NavLink>
-
-          <NavLink
-            to="/login"
-            className="login-button"
-          >
-            Login
-          </NavLink>
-        </nav>
-
+        <NavLink to="/login">
+          Login
+        </NavLink>
       </div>
-    </header>
+    </nav>
   );
 }
 

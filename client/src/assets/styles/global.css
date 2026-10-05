@@ -37,3 +37,141 @@ button {
   padding: 10px 20px;
   cursor: pointer;
 }
+/* ================================
+   SPRINT 9 DASHBOARD
+================================ */
+
+.dashboard-container {
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  background: #f4f7f6;
+}
+
+.dashboard-card {
+  width: 100%;
+  max-width: 850px;
+  background: white;
+  padding: 45px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: #e7f8ef;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.dashboard-card h1 {
+  margin-top: 18px;
+  font-size: 40px;
+  color: #111827;
+}
+
+.dashboard-description {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Check-in section */
+
+.checkin-box,
+.member-box {
+  margin-top: 30px;
+  padding: 28px;
+  border-radius: 18px;
+  background: #f8faf9;
+  border: 1px solid #e5e7eb;
+}
+
+.checkin-box h2,
+.member-box h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.count-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #16a34a;
+  margin-bottom: 18px;
+}
+
+/* Button */
+
+.checkin-box button {
+  padding: 13px 24px;
+  border-radius: 10px;
+  background: #16a34a;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.checkin-box button:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+/* Input */
+
+.member-box input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.member-box input:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+/* Messages */
+
+.welcome-message {
+  margin-top: 18px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: #e7f8ef;
+  color: #15803d;
+}
+
+.input-hint {
+  margin-top: 15px;
+  color: #9ca3af;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 25px 15px;
+  }
+
+  .dashboard-card {
+    padding: 25px 20px;
+  }
+
+  .dashboard-card h1 {
+    font-size: 30px;
+  }
+
+  .checkin-box,
+  .member-box {
+    padding: 20px;
+  }
+}

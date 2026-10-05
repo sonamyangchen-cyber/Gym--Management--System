@@ -1,109 +1,80 @@
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-}
-
-.navbar-container {
-  max-width: 1200px;
-  min-height: 70px;
-  margin: 0 auto;
-  padding: 0 24px;
-
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #222;
+  gap: 20px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  text-decoration: none;
-  color: #111827;
+.navbar-logo {
+  color: white;
   font-size: 22px;
-  font-weight: 800;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
-.brand:hover {
-  color: #f97316;
-}
-
-.nav-links {
+.navbar-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: flex-end;
+  gap: 25px;
 }
 
-.nav-link {
-  padding: 9px 14px;
-
-  color: #4b5563;
+.navbar-links a {
+  color: white;
   text-decoration: none;
-
-  font-size: 15px;
-  font-weight: 600;
-
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  font-size: 16px;
+  transition: 0.3s;
+  white-space: nowrap;
 }
 
-.nav-link:hover {
-  color: #f97316;
-  background: #fff7ed;
+.navbar-links a:hover {
+  opacity: 0.7;
 }
 
-.nav-link.active {
-  color: #f97316;
-  background: #fff7ed;
+.navbar-links a.active {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-.login-button {
-  margin-left: 8px;
-  padding: 10px 18px;
+/* Tablet */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 15px 25px;
+  }
 
-  color: #ffffff;
-  background: #f97316;
+  .navbar-links {
+    gap: 15px;
+  }
 
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.login-button:hover {
-  background: #ea580c;
-  transform: translateY(-1px);
+  .navbar-links a {
+    font-size: 15px;
+  }
 }
 
 /* Mobile */
-
-@media (max-width: 700px) {
-  .navbar-container {
-    padding: 12px 16px;
+@media (max-width: 600px) {
+  .navbar {
     flex-direction: column;
+    justify-content: center;
+    padding: 15px 20px;
     gap: 12px;
   }
 
-  .nav-links {
+  .navbar-logo {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .navbar-links {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px 18px;
   }
 
-  .nav-link {
-    padding: 8px 10px;
+  .navbar-links a {
     font-size: 14px;
-  }
-
-  .login-button {
-    margin-left: 0;
   }
 }
