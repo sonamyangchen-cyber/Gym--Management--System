@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import Button from "../../components/common/Button";
 
@@ -7,69 +6,47 @@ function Dashboard() {
   const [memberName, setMemberName] = useState("");
 
   return (
-    <div>
-      <title>Dashboard - Gym Management System</title>
+    <div className="dashboard-container">
+      <div className="dashboard-card">
+        <span className="dashboard-badge">GYMPRO • DASHBOARD</span>
 
-      <h1>Gym Dashboard</h1>
+        <h1>Gym Dashboard</h1>
 
-      <p>Dashboard placeholder for gym management.</p>
+        <p className="dashboard-description">
+          Manage your gym members and track daily check-ins.
+        </p>
 
-      <h2>Members Checked In: {count}</h2>
+        <div className="checkin-box">
+          <h2>Members Checked In</h2>
 
-      <Button onClick={() => setCount(count + 1)}>
-        Check In Member
-      </Button>
+          <div className="count-number">{count}</div>
 
-      <br />
-      <br />
+          <Button onClick={() => setCount(count + 1)}>
+            Check In Member
+          </Button>
+        </div>
 
-      <input
-        type="text"
-        placeholder="Enter member name"
-        value={memberName}
-        onChange={(e) => setMemberName(e.target.value)}
-      />
+        <div className="member-box">
+          <h2>Member Information</h2>
 
-      {memberName ? (
-        <p>Welcome, {memberName}!</p>
-      ) : (
-        <p>Please enter a member name.</p>
-      )}
-=======
-import PageTitle from "../../components/ui/PageTitle";
-import Card from "../../components/ui/Card";
-import Button from "../../components/ui/Button";
+          <input
+            type="text"
+            placeholder="Enter member name"
+            value={memberName}
+            onChange={(e) => setMemberName(e.target.value)}
+          />
 
-function Dashboard() {
-  const handleClick = () => {
-    alert("Welcome to the Gym Dashboard!");
-  };
-
-  return (
-    <div className="dashboard">
-      <PageTitle title="Gym Dashboard" />
-
-      <p>Manage your gym activities from one place.</p>
-
-      <div className="dashboard-cards">
-        <Card
-          title="👥 Members"
-          description="Manage gym members and their information."
-        />
-
-        <Card
-          title="🏋️ Workouts"
-          description="View and manage workout programs."
-        />
-
-        <Card
-          title="🧑‍🏫 Trainers"
-          description="Manage trainers and training sessions."
-        />
+          {memberName ? (
+            <p className="welcome-message">
+              Welcome, <strong>{memberName}</strong>! 💪
+            </p>
+          ) : (
+            <p className="input-hint">
+              Please enter a member name.
+            </p>
+          )}
+        </div>
       </div>
-
-      <Button text="View Dashboard" onClick={handleClick} />
->>>>>>> e0772abdddc4d00cda839465670c105c56a1a086
     </div>
   );
 }

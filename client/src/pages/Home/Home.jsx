@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import Welcome from "../../components/ui/Welcome";
-import { Link } from "react-router-dom"
-=======
-
 import { Link } from "react-router-dom";
->>>>>>> e0772abdddc4d00cda839465670c105c56a1a086
 import "./Home.css";
 
 import Button from "../../components/ui/Button";
@@ -17,7 +12,14 @@ function Home() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <span className="hero-badge">FITNESS • HEALTH • COMMUNITY</span>
+          <span className="hero-badge">
+            FITNESS • HEALTH • COMMUNITY
+          </span>
+
+          <Welcome
+            name="Sonam"
+            project="Gym Management System"
+          />
 
           <PageTitle title="Build Your Stronger Self" />
 
@@ -27,7 +29,7 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-           <Button text="Get Started" />
+            <Button text="Get Started" />
             <Button text="Explore Programs" />
           </div>
 
@@ -69,27 +71,28 @@ function Home() {
             A simple and modern system designed to make gym management easier.
           </p>
         </div>
-<div className="feature-grid">
-  <Card
-    title="🏋️ Workout Programs"
-    description="Follow structured workout plans and keep track of your progress."
-  />
 
-  <Card
-    title="👤 Member Management"
-    description="Easily manage member profiles, memberships, and attendance."
-  />
+        <div className="feature-grid">
+          <Card
+            title="🏋️ Workout Programs"
+            description="Follow structured workout plans and keep track of your progress."
+          />
 
-  <Card
-    title="🧑‍🏫 Personal Trainers"
-    description="Connect members with trainers and manage training sessions."
-  />
+          <Card
+            title="👤 Member Management"
+            description="Easily manage member profiles, memberships, and attendance."
+          />
 
-  <Card
-    title="📊 Track Progress"
-    description="Monitor fitness progress with clear and useful statistics."
-  />
-</div>
+          <Card
+            title="🧑‍🏫 Personal Trainers"
+            description="Connect members with trainers and manage training sessions."
+          />
+
+          <Card
+            title="📊 Track Progress"
+            description="Monitor fitness progress with clear and useful statistics."
+          />
+        </div>
       </section>
 
       {/* CTA */}
