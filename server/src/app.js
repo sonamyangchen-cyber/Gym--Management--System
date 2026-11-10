@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 
 const testRoutes = require("./routes/testRoutes");
-const memberRoutes = require("./routes/memberRoutes");
+const memberRoutes = require("../routes/memberRoutes");
 const requestLogger = require("./middleware/requestLogger");
 
 const app = express();
