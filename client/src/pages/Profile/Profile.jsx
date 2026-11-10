@@ -1,6 +1,7 @@
 import PageTitle from "../../components/ui/PageTitle";
 import Card from "../../components/ui/Card";
 import Button from "../../components/ui/Button";
+import "./Profile.css";
 
 function Profile() {
   const handleClick = () => {

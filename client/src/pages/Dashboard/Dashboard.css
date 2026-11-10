@@ -1,0 +1,158 @@
+/* Dashboard main container */
+.dashboard-container {
+  width: 100%;
+  padding: 30px 20px;
+}
+
+/* Dashboard card */
+.dashboard-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Dashboard heading */
+.dashboard-card h1 {
+  color: #172554;
+  margin: 15px 0;
+}
+
+.dashboard-description {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+/* Member count box */
+.checkin-box {
+  background: #eff6ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.checkin-box h2 {
+  color: #172554;
+  font-size: 18px;
+}
+
+.count-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Member information */
+.member-box {
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.member-box h2 {
+  color: #172554;
+  margin-bottom: 20px;
+}
+
+.member-box h3 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.member-box p {
+  color: #64748b;
+  margin: 8px 0;
+}
+
+/* Member action buttons */
+.member-box button {
+  padding: 9px 18px;
+  margin: 8px 8px 8px 0;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.member-box button:hover {
+  background: #1d4ed8;
+}
+
+/* Edit form */
+.member-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 450px;
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.member-box form input,
+.member-box form select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 14px;
+  outline: none;
+}
+
+.member-box form input:focus,
+.member-box form select:focus {
+  border-color: #2563eb;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 15px 10px;
+  }
+
+  .dashboard-card {
+    padding: 18px;
+  }
+
+  .member-box {
+    padding: 15px;
+  }
+}
+/* Center dashboard content */
+.dashboard-card {
+  text-align: center;
+}
+
+/* Center member information */
+.member-box {
+  text-align: center;
+}
+
+/* Center each member's details */
+.member-box > div > div {
+  text-align: center;
+}
+
+/* Center edit form */
+.member-box form {
+  margin: 20px auto;
+  align-items: center;
+}
+
+/* Center form inputs */
+.member-box form input,
+.member-box form select {
+  text-align: center;
+}
+
+/* Center action buttons */
+.member-box button {
+  margin: 8px;
+}

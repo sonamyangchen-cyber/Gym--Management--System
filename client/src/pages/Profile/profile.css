@@ -1,0 +1,47 @@
+/* Profile page */
+.profile {
+  width: 100%;
+  min-height: 80vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+/* Profile heading */
+.profile h1 {
+  color: #172554;
+  text-align: center;
+}
+
+/* Profile cards */
+.profile .card {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Card content */
+.profile .card h2,
+.profile .card p {
+  text-align: center;
+}
+
+/* Profile settings button */
+.profile button {
+  margin: 10px auto;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .profile {
+    padding: 20px 10px;
+  }
+
+  .profile .card {
+    width: 100%;
+  }
+}

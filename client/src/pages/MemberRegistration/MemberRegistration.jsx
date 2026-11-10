@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import { createMember } from "../../services/memberService";
 import "./MemberRegistration.css";
 
 const initialForm = {
@@ -43,9 +43,11 @@ function validateForm(form) {
 }
 
 export default function MemberRegistration() {
-  const [form, setForm] = useState(initialForm);
-  const [errors, setErrors] = useState({});
-  const [submittedMember, setSubmittedMember] = useState(null);
+ const [form, setForm] = useState(initialForm);
+const [errors, setErrors] = useState({});
+const [submittedMember, setSubmittedMember] = useState(null);
+const [apiError, setApiError] = useState("");
+const [isSubmitting, setIsSubmitting] = useState(false);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -63,23 +65,44 @@ export default function MemberRegistration() {
     setSubmittedMember(null);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  async function handleSubmit(event) {
+  event.preventDefault();
 
-    const validationErrors = validateForm(form);
-    setErrors(validationErrors);
+  const validationErrors = validateForm(form);
+  setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length > 0) {
-      setSubmittedMember(null);
-      return;
-    }
+  if (Object.keys(validationErrors).length > 0) {
+    setSubmittedMember(null);
+    return;
+  }
 
-    // Frontend demonstration only; no backend or database yet.
-    setSubmittedMember({ ...form });
-    console.log("Registered member:", form);
+  setApiError("");
+  setSubmittedMember(null);
+  setIsSubmitting(true);
+
+  try {
+    const result = await createMember({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      membershipPlan: form.plan,
+      joinDate: form.joiningDate,
+      status: "Active",
+    });
+
+    setSubmittedMember({
+      ...form,
+      membershipPlan: form.plan,
+      ...(result.data || {}),
+    });
+
     setForm(initialForm);
     setErrors({});
+  } catch (error) {
+    setApiError(error.message);
+  } finally {
+    setIsSubmitting(false);
   }
+}
 
   function handleReset() {
     setForm(initialForm);
@@ -97,17 +120,20 @@ export default function MemberRegistration() {
           <h1>Register a Member</h1>
           <p>Add a new member to your fitness community.</p>
         </div>
-
-        {submittedMember && (
-          <div className="member-success" role="status">
-            <strong>Member registered successfully!</strong>
-            <p>
-              {submittedMember.name} has been registered with the{" "}
-              {submittedMember.plan} plan.
-            </p>
-          </div>
-        )}
-
+      {submittedMember && (
+  <div className="member-success" role="status">
+    <strong>Member registered successfully!</strong>
+    <p>
+      {submittedMember.name} has been registered with the{" "}
+      {submittedMember.membershipPlan} plan.
+    </p>
+  </div>
+)}
+        {apiError && (
+  <div className="member-error" role="alert">
+    {apiError}
+  </div>
+)}
         <form onSubmit={handleSubmit} noValidate>
           <div className="member-field">
             <label htmlFor="name">Full Name *</label>
@@ -139,6 +165,7 @@ export default function MemberRegistration() {
               aria-invalid={Boolean(errors.email)}
               aria-describedby={errors.email ? "email-error" : undefined}
             />
+        
             {errors.email && (
               <small id="email-error" className="member-error">
                 {errors.email}
@@ -178,9 +205,9 @@ export default function MemberRegistration() {
               aria-describedby={errors.plan ? "plan-error" : undefined}
             >
               <option value="">Select a plan</option>
-              <option value="Basic">Basic — 1 Month</option>
-              <option value="Standard">Standard — 3 Months</option>
-              <option value="Premium">Premium — 12 Months</option>
+<option value="Monthly">Monthly — 1 Month</option>
+<option value="Quarterly">Quarterly — 3 Months</option>
+<option value="Yearly">Yearly — 12 Months</option>
             </select>
             {errors.plan && (
               <small id="plan-error" className="member-error">
@@ -211,16 +238,13 @@ export default function MemberRegistration() {
           </div>
 
           <div className="member-actions">
-            <button className="member-submit" type="submit">
-              Register Member
-            </button>
             <button
-              className="member-reset"
-              type="button"
-              onClick={handleReset}
-            >
-              Reset
-            </button>
+  className="member-submit"
+  type="submit"
+  disabled={isSubmitting}
+>
+  {isSubmitting ? "Registering..." : "Register Member"}
+</button>
           </div>
 
           <p className="member-note">* All fields are required.</p>
