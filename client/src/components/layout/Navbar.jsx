@@ -16,6 +16,9 @@ function Navbar() {
         <NavLink to="/dashboard">
           Dashboard
         </NavLink>
+        <NavLink to="/trainers">
+  Trainers
+</NavLink>
 
         <NavLink to="/profile">
           Profile

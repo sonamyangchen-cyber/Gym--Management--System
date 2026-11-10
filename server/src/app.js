@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const testRoutes = require("./routes/testRoutes");
 const memberRoutes = require("../routes/memberRoutes");
+const trainerRoutes = require("../routes/trainerRoutes");
 const requestLogger = require("./middleware/requestLogger");
 
 const app = express();
@@ -18,5 +19,7 @@ app.use("/", testRoutes);
 
 // Gym member API routes
 app.use("/api/members", memberRoutes);
+// Gym trainer API routes
+app.use("/api/trainers", trainerRoutes);
 
 module.exports = app;

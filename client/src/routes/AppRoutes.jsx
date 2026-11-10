@@ -8,7 +8,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile/Profile";
 import NotFound from "../pages/NotFound/NotFound";
 import MemberRegistration from "../pages/MemberRegistration/MemberRegistration";
-
+import Trainers from "../pages/Trainers/Trainers";
 function AppRoutes() {
   return (
     <Routes>
@@ -20,6 +20,7 @@ function AppRoutes() {
           path="/member-registration"
           element={<MemberRegistration />}
         />
+        <Route path="/trainers" element={<Trainers />} />
       </Route>
 
       <Route path="/login" element={<Login />} />

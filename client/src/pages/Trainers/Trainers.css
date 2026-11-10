@@ -1,0 +1,124 @@
+
+.trainers-container {
+  width: 100%;
+  padding: 30px 20px;
+}
+
+.trainers-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.trainers-card h1 {
+  color: #172554;
+  margin: 15px 0;
+}
+
+.trainers-description {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.trainer-count-box {
+  background: #eff6ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.trainer-count-box h2 {
+  color: #172554;
+  font-size: 18px;
+}
+
+.trainer-count {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.trainers-card button {
+  padding: 9px 18px;
+  margin: 8px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.trainers-card button:hover {
+  background: #1d4ed8;
+}
+
+.trainer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.trainer-form input,
+.trainer-form select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 14px;
+  outline: none;
+}
+
+.trainer-form input:focus,
+.trainer-form select:focus {
+  border-color: #2563eb;
+}
+
+.trainer-list {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.trainer-list h2 {
+  color: #172554;
+  margin-bottom: 20px;
+}
+
+.trainer-item {
+  padding: 15px;
+}
+
+.trainer-item h3 {
+  color: #1e293b;
+}
+
+.trainer-item p {
+  color: #64748b;
+  margin: 8px 0;
+}
+
+@media (max-width: 600px) {
+  .trainers-container {
+    padding: 15px 10px;
+  }
+
+  .trainers-card {
+    padding: 18px;
+  }
+
+  .trainer-list {
+    padding: 15px;
+  }
+}

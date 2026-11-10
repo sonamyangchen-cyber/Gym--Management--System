@@ -29,10 +29,12 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <Button text="Get Started" />
-            <Button text="Explore Programs" />
-          </div>
+  <Link to="/member-registration">
+    <Button text="Get Started" />
+  </Link>
 
+  <Button text="Explore Programs" />
+</div>
           <div className="hero-stats">
             <div>
               <strong>500+</strong>
