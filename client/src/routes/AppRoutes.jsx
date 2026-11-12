@@ -1,14 +1,17 @@
+
 import { Routes, Route } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
 
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile/Profile";
 import NotFound from "../pages/NotFound/NotFound";
 import MemberRegistration from "../pages/MemberRegistration/MemberRegistration";
 import Trainers from "../pages/Trainers/Trainers";
+
 function AppRoutes() {
   return (
     <Routes>
@@ -16,15 +19,20 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
+
         <Route
           path="/member-registration"
           element={<MemberRegistration />}
         />
+
         <Route path="/trainers" element={<Trainers />} />
       </Route>
 
+      {/* Authentication routes */}
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
 
+      {/* 404 route */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
